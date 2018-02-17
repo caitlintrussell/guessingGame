@@ -2,39 +2,40 @@
 <html lang='en'>
   <head>
     <title>Guessing Game</title>
-    <link href='./style.css' type='text/css' rel='stylesheet' />
-    <link href='./bootstrap/css/bootstrap.min.css' type='text/css' rel='stylesheet' />
+    <link href='./css/style.css' type='text/css' rel='stylesheet' />
+    <link href='./css/bootstrap.min.css' type='text/css' rel='stylesheet' />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
-    <link rel="icon" type="image/png" href="./favicon.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
 
   <body>
     <div id='container'>
-    <div id='header' class='text-area'>
+    <div id='header'>
       <div class='row'>
-        <div class='col-md-2'>
-            <a href=''>Reset</a>
-            <a href=''>Hint</a>
+        <div class='col-md-2 text-area'>
+            <button id='reset' class='header-button'>Reset</button>
+            <button id='hint' class='header-button'>Hint</button>
         </div>
-        <div class='col-md-10 right-content'>
-          Welcome. Guess a number between 1 and 100. You have five guesses remaining.
+        <div class='col-md-10 right-content text-area'>
+          <div id='title'>Guess a number between 1 and 100! Good luck!</div>
+          <div class ='text-area-sm' id='subtitle'>You have five guesses remaining.</div>
         </div>
       </div>
     </div>
     <div id='main' class='row'>
         <div class='col-md-4 col-md-push-1'>
-          <img src='./guessingLogo.svg' class='img-responsive no-drag'>
+          <img src='img/guessingLogo.svg' class='img-responsive no-drag'>
         </div>
         <div class='col-md-4'>
-          <img src='./triUp.svg' class='img-responsive no-drag'>
+          <img src='img/triUp.svg' class='img-responsive no-drag'>
           <div class='input-text-overlay center-content text-area'>
               <input id='player-input' class='center-content' placeholder='#' maxLength='2' autofocus="autofocus" ></input>
               <button type='button' class='text-area' id='submit'>GO</button>
           </div>
         </div>
         <div class='col-md-4 col-md-pull-1'>
-          <img src='./triDown.svg' class='img-responsive no-drag'>
+          <img src='img/triDown.svg' class='img-responsive no-drag'>
           <div class='guess-text-overlay center-content text-area'>
              <div class='guess'>##</div>
              <div class='guess'>##</div>
@@ -49,16 +50,17 @@
     <div id='footer' class='center-content'>
       <div class='row'>
         <div class='col-md-4'>
-          <img src='fa-logo@2x.png' class='img-responsive no-drag' alt='FullStack Academy'/>
+          <img src='img/fa-logo@2x.png' class='img-responsive no-drag' alt='FullStack Academy'/>
         </div>
         <div class='col-md-4 text-area-sm'><br />
           Caitlin Trussell for Fullstack Foundations | &copy; 2018
         </div>
         <div class='col-md-4'>
-          <img src='grace_hopper_academy.png' class='img-responsive no-drag' alt='Grace Hopper'/>
+          <img src='img/grace_hopper_academy.png' class='img-responsive no-drag' alt='Grace Hopper'/>
         </div>
       </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src ='js/guessingGame.js'></script>
   </body>
 </html>

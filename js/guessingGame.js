@@ -1,7 +1,7 @@
 
 
 function generateWinningNumber () {
-  return Math.floor(Math.random() * 100) + 1;
+  return Math.floor(Math.random() * 100);
 }
 
 function shuffle (arr) {
@@ -68,9 +68,9 @@ Game.prototype.checkGuess = function () {
 
     if (this.pastGuesses.length === 5) {
       $('.guess-text-overlay div:nth-of-type(5)').text(this.playersGuess);
-      $('#subtitle').text('');
-      $('#hint, #submit').prop('disabled', true);
-      return 'You Lose... Click the reset button to play again!';
+      $('#subtitle').text('Click the reset button to play again! Better luck next time!');
+      $('#hint, #submit, #player-input').prop('disabled', true);
+      return `You lose... The winning number was ${this.winningNumber}`;
     }
     else {
       $('.guess-text-overlay div:nth-of-type(' + this.pastGuesses.length + ')').text(this.playersGuess);
@@ -90,7 +90,7 @@ Game.prototype.checkGuess = function () {
 }
 
 Game.prototype.provideHint = function () {
-  let hintArr = [generateWinningNumber(), generateWinningNumber(), this.winningNumber];
+  let hintArr = [generateWinningNumber(), generateWinningNumber(), this.winningNumber, generateWinningNumber(), generateWinningNumber()];
   return shuffle(hintArr).join(' - ');
 }
 
@@ -136,7 +136,7 @@ $(document).ready(function () {
     $('#title').text('Guess a number between 1 and 100! Good luck!');
     $('#subtitle').text('You have five guesses remaining.');
     $('.guess').text('##');
-    $('#hint, #submit').prop('disabled', false)
+    $('#hint, #submit, #player-input').prop('disabled', false)
     $('#hint')
       .mouseover(function () {
         $(this).addClass('header-button-hover')
